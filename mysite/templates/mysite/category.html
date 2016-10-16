@@ -1,0 +1,15 @@
+{% extends "mysite/base.html" %}
+
+{% block title %}
+    {{ category.name }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ category.name }}</h1>
+
+    <p>
+    {{ category.descriptor }}
+    </p>
+
+    <b><a href="{% url 'home' %}">К списку</a></b>
+{% endblock %}
