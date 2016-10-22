@@ -9,3 +9,9 @@ def login(request):
 
 def logout(request):
     return render(request, "logout.html", {'username': auth.get_user(request).username})
+
+def register(request):
+    return render(request, "register.html", {})
+
+def accountPage(request):
+    return render(request, 'account.html',{})
