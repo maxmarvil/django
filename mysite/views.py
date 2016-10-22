@@ -26,9 +26,3 @@ def show_category(request,category_id):
     category = get_object_or_404(Category,id=category_id)
     return render(request, "mysite/category.html",{'category':category})
 
-
-def login(request):
-    return render(request, "mysite/login.html", {})
-
-def logout(request):
-    return render(request, "mysite/logout.html", {'username': auth.get_user(request).username})

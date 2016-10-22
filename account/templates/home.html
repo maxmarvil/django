@@ -1,0 +1,14 @@
+{% extends 'mysite/base.html' %}
+
+{% block title %}
+    Домашняя
+{% endblock %}
+
+{% block content %}
+    <h1>Категории</h1>
+
+    {% for cat in category %}
+        <h4><a href="{% url 'categorys' cat.id %}">{{ cat.name }}</a></h4>
+        <p>{{ cat.get_preview_text}}</p>
+    {% endfor %}
+{% endblock %}
