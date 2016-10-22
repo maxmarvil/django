@@ -4,5 +4,7 @@ from mysite import views
 urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^about/$', views.about, name='about'),
-    url(r'^categorys/(?P<category_id>[0-9]+)/$', views.show_category, name='categorys')
+    url(r'^categorys/(?P<category_id>[0-9]+)/$', views.show_category, name='categorys'),
+    url(r'^login/$',views.login, name='login'),
+    url(r'^logout/$',views.logout, name='logout')
 ]

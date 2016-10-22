@@ -7,14 +7,16 @@ from django.http import HttpResponse
 #def index(request):
 #    return HttpResponse("Hello, world. You're at the polls index.")
 from mysite.models import Category
+from django.contrib import auth
 
 
 def home(request):
     category = Category.objects.all()
     context ={
-        'category':category
+        'category':category,
+        'username': auth.get_user(request).username,
     }
-    return render(request,'mysite/home.html',context)
+    return render(request,'mysite/home.html', context)
 
 
 def about(request):
@@ -23,3 +25,10 @@ def about(request):
 def show_category(request,category_id):
     category = get_object_or_404(Category,id=category_id)
     return render(request, "mysite/category.html",{'category':category})
+
+
+def login(request):
+    return render(request, "mysite/login.html", {})
+
+def logout(request):
+    return render(request, "mysite/logout.html", {'username': auth.get_user(request).username})
