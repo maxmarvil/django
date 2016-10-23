@@ -5,5 +5,5 @@ urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^about/$', views.about, name='about'),
     url(r'^categorys/(?P<category_id>[0-9]+)/$', views.show_category, name='categorys'),
-    url(r'^auth/$', include("account.urls"))
+    url(r'^auth/', include("account.urls"))
 ]

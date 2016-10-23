@@ -1,1 +1,22 @@
-заходим
+{% extends 'mysite/base.html' %}
+
+{% block content %}
+    <form method="post" class="form-signin">
+        <h2 class="form-signin-heading">Пожалуйста, авторизуйтесь</h2>
+    {% csrf_token %}
+        <label for="inputLogin" class="sr-only">Логин</label>
+        <input type="text" id="inputLogin"  class="form-control" placeholder="Login" name="username" required autofocus>
+        <label for="inputPassword" class="sr-only">Пароль</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+        {% if login_error %}
+            <label class="errornote">{{ login_error }}</label>
+        {% endif %}
+
+        {% comment %}<div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>{% endcomment %}
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+{% endblock %}

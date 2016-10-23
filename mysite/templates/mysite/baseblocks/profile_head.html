@@ -1,6 +1,6 @@
 
 {% if username %}
-    <li><a title="{{  username }}" href="{% url "logout" %}">Выйти</a></li>
+    <li><a title="{{  username }}" href="{% url "logout" %}">Выйти ({{ username }})</a></li>
 {% else %}
     <li><a href="{% url "login" %}">Войти</a></li>
 {% endif %}

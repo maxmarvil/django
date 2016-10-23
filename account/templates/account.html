@@ -1,0 +1,23 @@
+{% extends 'mysite/base.html' %}
+
+{% block title %}
+    Редактирование профиля
+{% endblock %}
+
+{% if username %}
+    {% block content %}
+      <form method="post" class="form-account ">
+        <h2 class="form-signin-heading">Редактирование профиля</h2>
+        {% csrf_token %}
+        <fieldset>
+          {% for field in fields %}
+              <label for="inputLogin" class="sr-only">Логин</label>
+              <input type="text" id="inputLogin"  class="form-control" placeholder="Login" name="username" required autofocus>
+          {% endfor %}
+        </fieldset>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+    {% endblock %}
+{% else %}
+
+{% endif %}

@@ -18,7 +18,6 @@ def home(request):
     }
     return render(request,'mysite/home.html', context)
 
-
 def about(request):
     return render(request,"mysite/about.html")
 
